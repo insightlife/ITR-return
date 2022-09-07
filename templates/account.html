@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{%load static%}
+<html lang="en">
+<head>
+</head>
+<body>
+    {% block content %}
+    <div class="container-fluid lll">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-md-4">
+            <img src="{% static 'people.jpg'%}" height="350px" width="100%">
+            {% if messages %}
+            <ul class="messages msg pox">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {%endif%}
+            <h3 class="pox kk">Welcome to our family.</h3>
+            <h3 class="pox kk">We are ready to give you the best service.</h3>
+            <h5 class="pox kk"><a href="/">login here</a></h5>
+        </div>
+    </div>
+</body>
+{% endblock content %}
+</html>
